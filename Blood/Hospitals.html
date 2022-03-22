@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+            body, html{
+                height: 100%;
+                margin: 0;
+            }
+            
+            .parallax {
+                /* The image used */
+                background-image: url('Ribbon.jpg');
+                /* Full height */
+                height: 100%; 
+
+                /* Create the parallax scrolling effect */
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+            
+            .info{
+                display: inline-block;
+                padding: 15%;
+                padding-left: 7%;
+                padding-right: 7%;
+                background-color: white;
+                margin-left: 5%;
+                border-radius: 15px 100px;
+                width: 300px;
+                height: 200px;
+                position: relative;
+                bottom: 120px;
+                font-size: 18px;
+            }
+            
+            .circle-container {
+                display: inline-block;
+                padding: 5%;
+                background-color: #fd5a5a;
+                position: relative;
+                width: 24em;
+                height: 24em;
+                /*2.8em = 2em*1.4 (2em = half the width of a link with img, 1.4 = sqrt(2))*/
+                border-radius: 50%;
+                
+            }
+            .circle-container a {
+                display: block;
+                position: absolute;
+                top: 50%; left: 50%;
+                width: 4em; height: 4em;
+                margin: -2em;
+            }
+            
+            .circle-container img { display: block; width: 100%; }
+            .deg0 { transform: translate(12em); } /* 12em = half the width of the wrapper */
+            .deg45 { transform: rotate(45deg) translate(12em) rotate(-45deg); }
+            .deg135 { transform: rotate(135deg) translate(12em) rotate(-135deg); }
+            .deg180 { transform: translate(-12em); }
+            .deg225 { transform: rotate(225deg) translate(12em) rotate(-225deg); }
+            .deg315 { transform: rotate(315deg) translate(12em) rotate(-315deg); }
+			
+			ul.menubar{ 
+                display: block;
+                margin: auto;
+                text-align: center;
+                padding-top: 5%;
+                padding-bottom: 5%;
+                margin: 0px;
+                list-style-type:none;
+                background-color:red;
+               }
+            li.menubar{
+                display:inline;
+                padding-left: 60px;
+                padding-right: 30px;
+            }
+            a.menubar{
+                display: inline;
+                text-decoration:none;
+                font-weight:bolder;
+                color:white;
+                font-size:30px;
+                font-family: sans-serif;
+                transition-duration: 1s;
+            }
+            a.menubar:hover{
+                color:lightpink;
+            }
+        </style>
+        <script>
+            function changeImage(pic){
+                var pict = document.getElementById("center");
+                pict.setAttribute('src', pic);
+            }
+            function changeInfo(name, text){
+                var info1 = document.getElementById("info1");
+                var info2 = document.getElementById("info2");
+                info1.innerHTML = name;
+                info2.innerHTML = text;
+            }
+        </script>
+    </head>
+    <body>
+        <div class = "parallax"> </div>
+        <div style = "background-color: #fd5a5a; padding: 10%;">
+            <h1 style = "font-size:80px; color:white;"> OUR HOSPITALS </h1>
+            <div class='circle-container'>
+                 <a href='#' class='center'><img id = "center" style = "height: 13em; width: 13em; position: relative; right: 4em; bottom: 4em;" src='img/square.png'></a>
+                 <a href='https://www.squarehospital.com' class='deg0'><img onmouseover="changeImage('img/square.png'); changeInfo('Square Hospital', '18/F, Bir Uttam Qazi Nuruzzaman Sarak,West Panthapath,Dhaka 1205.</br></br> Phone Number: 10616')" src='img/square.png'></a>
+
+
+                 <a href='https://www.populardiagnostic.com' class='deg45'><img onmouseover="changeImage('img/pop.png'); changeInfo('Popular Diagnostic Centre Ltd', 'House #16, Road # 2, Dhanmondi R/A, Dhaka-1205, Bangladesh.</br></br>Phone Number: 09613 787801, 09666 787801')" src='img/pop.png'></a>
+
+
+                 <a href='https://labaidgroup.com/specialized' class='deg135' onmouseover="changeImage('img/lab.png'); changeInfo('Labaid Hospitals', 'House- 06, Road-04, Dhanmondi.Dhaka 1205, Bangladesh.</br></br>Phone Number:10606 , Labaid Home Service:01766661452 ,01766661900')"><img src='img/lab.png'></a>
+
+
+                 <a href='https://www.birdembd.org' class='deg180'><img onmouseover="changeImage('img/bir.png'); changeInfo('BIRDEM Hospital', 'BIRDEM, the Bangladesh Institute of research and rehabilitation in diabetes endocrine and metabolize disorders. Most of the people think the institute is only for diabetes patients, but it is not only for diabetes patients but also for compatible with others.</br></br>Phone Number: 02-9661551')" src='img/bir.png'></a>
+
+
+                 <a href='https://www.uhlbd.com' class='deg225'><img onmouseover="changeImage('img/uni.png'); changeInfo('United Hospital Limited', 'Plot # 15 রোড নং ৭১, ঢাকা 1212 ,Gulshan .</br></br>HOTLINE NO: 10666')" 
+                    src='img/uni.png'></a>
+
+
+                 <a href='https://www.ibnsinatrust.com' class='deg315'><img onmouseover="changeImage('img/ibn.png'); changeInfo('Ibn Sina Specialized Hospital', ' House # 48, Road # 9/A, Dhanmondi, Dhaka 1209></br>HOTLINE NO: 10615')" src='img/ibn.png'></a>
+            </div>
+            <div class = "info">
+                <h1 id = 'info1'>Square Hospital</h1>
+                <p id = 'info2'> The square hospital ensures the best healthcare as well as clinical service with outstanding personal service. Though their treatment is expensive, people can get the best treatment plan..</br></br> HOTLINE NO: 10616</p>
+            </div>
+        </div>
+		<ul class = "menubar">
+			<li class = "menubar"><a class = "menubar" href="Home.html">Home</a></li>
+			<li class = "menubar"><a class = "menubar" href="Info.html">Information</a></li>
+            <li class = "menubar"><a class = "menubar" href="Eligibility.html">Eligibility</a></li>
+            <li class = "menubar"><a class = "menubar" href = "Stories.html">Stories</a></li>
+			<li class = "menubar"><a class = "menubar" href = "ContactUs.html">Contact Us</a></li>
+            
+        </ul>
+    </body>
+</html>
